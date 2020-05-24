@@ -171,3 +171,4 @@ install: all
 	install -m 755 contrib/lib/*.so /usr/local/lib/
 	install -m 755 contrib/lib/ks/*.* /usr/local/bin/
 	install -m 644 conf/* /etc/$(GATEWAY_NAME)/
+	ldconfig

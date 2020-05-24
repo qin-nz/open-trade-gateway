@@ -15,12 +15,15 @@ Install
 -------------------------------------------------
 本服务必须在Linux环境下安装运行。下面的安装步骤以 Debian 9 为例，其它 linux 发行版可能需要相应调整.
 
-安装 openssl, libcurl, boost 等依赖库
+安装 openssl, libcurl 等依赖库
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-用apt命令安装 openssl 和 libcurl::
+用apt命令安装 ::
 
-    sudo apt install libcurl4-openssl-dev
+    sudo apt install libcurl4-openssl-dev libssl-dev
+
+安装 boost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2019-03-21前的版本需要安装 boost 1.68.0, 参见 https://www.boost.org/doc/libs/1_68_0/more/getting_started/unix-variants.html
 
@@ -33,8 +36,9 @@ Install
     git clone https://github.com/shinnytech/open-trade-gateway.git
 
 编译与安装::
+
   cd open-trade-gateway
-  sudo make
+  make
   sudo make install
 
 第一次安装后需要将如下两个路径加入/etc/ld.so.conf文件中
@@ -80,7 +84,7 @@ Config
 
       {
         "name": "simnow",
-        "type": "ctp"，
+        "type": "ctp",
         "is_fens":false,
         "broker_id": "9999",
         "product_info": "abcd",
